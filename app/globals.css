@@ -16,12 +16,34 @@
   }
 }
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+.list-inside {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 300px;
+  width: 100vw;
+}
+
+nav {
+  padding: 0;
+  margin: 20px 0;
+}
+
+.header {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content {
+  margin: 0 300px;
 }

@@ -1,0 +1,57 @@
+.un-dropped {
+    display: none;
+
+}
+
+.drop-box:hover .un-dropped {
+    display: block;
+}
+
+.header {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+/* .animal-list {
+    margin-left: 45%;
+} */
+
+.animal {
+    margin-bottom: 30px;
+}
+
+.animal-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+
+
+.animal-img {
+    width: 300px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.drop-box {
+    /* width: 100vw; */
+    display: block;
+    font-weight: 600;
+}
+
+.info {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.animal-name, .drop-box {
+    text-align: center;
+}
+
+.info, .drop-box {
+    margin: auto;
+}

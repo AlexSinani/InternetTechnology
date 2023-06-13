@@ -3,13 +3,13 @@
 import { useState, useEffect, useRef, FormEventHandler } from 'react';
 import { format } from 'date-fns';
 import { Header } from '../../components/Header';
+import './comments.css'
 
 interface Comment {
     id: string;
     createdTime: string;
     fields: {
         content: string;
-        movie_name: string;
         status: 'published' | 'pending-for-moderation'
     }
 }
@@ -28,6 +28,7 @@ function Comments() {
         fetch('/comments/api')
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             setComments(data);
         })
         .catch(() => {
@@ -61,18 +62,29 @@ function Comments() {
 
     return (
         <main className="mt-6">
-            <Header>Comments</Header>
+            <h1 className='header'>Comments</h1>
             {/* {isError && <p>Error!</p>} */}
             {isError ? <p>Error!</p> : null}
             {isLoading && <p>Loading...</p>}
-            <div>
+            <div className='comment-list'> 
                 {comments && comments.map((elem) => {
                     return (
-                        <div key={elem.id}>{elem.fields.content} ({elem.fields.status}, {formatDate(elem.createdTime)})</div>
+
+                        <div key={elem.id} className='comment'>
+                            <p className='comment-at'>
+                                {formatDate(elem.createdTime)}
+                            </p>
+                            <p className='comment-content'>
+                                {elem.fields.content}
+                            </p>
+                            <p className='comment-status'>
+                                {elem.fields.status}
+                            </p>
+                        </div>
                     )
                 })}
             </div>
-            <div>
+            <div className='write-comment'>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="comment_body"></label>
